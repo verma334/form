@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>Registration form</title>
+        <script type = "text/javascript">
+        
+        function submitfunc(){
+            var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function()   {
+    if (this.readyState == 4 && this.status == 200) {
+       document.getElementById("demo").innerHTML = xhttp.responseText;
+    }
+};
+xhttp.open("POST", "form.php", true);
+xhttp.send();
+        }
+        </script>
+    </head>
+    <body bgcolor="violet">
+        <div id="demo">[blank]</div>
+        <form method="post" >
+            <label>
+           
+            FIRST NAME:  <input type="name" name="first_name"  id="first_name"/>
+            </label><br /><br />
+            <label>
+           
+                LAST NAME:  <input type="name" name="last_name"  id="last_name"/>
+                </label><br><br />
+                <label>
+           
+                    PHONE Number:  <input type="phone" name="phone"  id="phone"/>
+                    </label><br><br />
+                    <label>
+            Email id:  <input type="email" name="email" id="email"/>
+                        </label><br><br />
+                        <label>Male<input type = "radio" name="radio" value="male">
+                        </label>
+                        <label>Female<input type = "radio" name="radio" value="female">
+                        </label><br><br />
+
+            <input type="button" name="Submit" onclick="submitfuncss()" > <button type="reset" name="Reset" >Reset</button><br>
+            <label>already a user? <a href="login.htm">Login</a></label>
+        </form>
+    </body>
+</html>
